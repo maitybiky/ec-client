@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 244 246 241;
+  --c-surface: 255 255 255;
+  --c-surface-2: 238 241 234;
+  --c-line: 228 231 223;
+  --c-ink: 23 23 26;
+  --c-muted: 110 112 118;
+  --c-accent: 190 242 100;
+  --c-accent-ink: 32 46 8;
+}
+
+.dark {
+  --c-bg: 11 12 13;
+  --c-surface: 24 25 27;
+  --c-surface-2: 36 37 40;
+  --c-line: 42 44 47;
+  --c-ink: 240 241 240;
+  --c-muted: 152 155 160;
+  --c-accent: 190 242 100;
+  --c-accent-ink: 32 46 8;
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-accent text-accent-ink;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-line bg-surface;
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-surface px-3 py-2 text-sm text-ink outline-none transition-shadow placeholder:text-muted focus:ring-2 focus:ring-accent;
+  }
+}
