@@ -26,7 +26,7 @@ function RuleCard({ rule }) {
   };
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-5">
+    <div className="rounded-xl border border-line bg-surface p-5">
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <h3 className="font-semibold">{rule.name}</h3>
@@ -44,7 +44,7 @@ function RuleCard({ rule }) {
           {rule.isActive ? 'Turn off' : 'Turn on'}
         </Button>
       </div>
-      <p className="mb-3 text-sm text-gray-500">{rule.description}</p>
+      <p className="mb-3 text-sm text-muted">{rule.description}</p>
 
       {draft ? (
         <div className="space-y-3">
@@ -63,7 +63,7 @@ function RuleCard({ rule }) {
         </div>
       ) : (
         <div className="flex items-center justify-between">
-          <code className="rounded bg-gray-100 px-2 py-1 text-xs">
+          <code className="rounded bg-surface-2 px-2 py-1 text-xs">
             {JSON.stringify(rule.config)}
           </code>
           <Button variant="secondary" onClick={startEdit}>
@@ -86,7 +86,7 @@ export function DiscountRulesManager() {
         <RuleCard key={rule._id} rule={rule} />
       ))}
       {rules?.length === 0 && (
-        <p className="text-gray-500">
+        <p className="text-muted">
           No rules yet — run <code>npm run seed:discounts</code> in the backend.
         </p>
       )}

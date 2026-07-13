@@ -20,7 +20,7 @@ export function CheckoutPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
-      <Link to="/cart" className="text-sm text-gray-500 hover:underline">
+      <Link to="/cart" className="text-sm text-muted hover:underline">
         ← Back to cart
       </Link>
       <h1 className="mb-6 mt-2 text-2xl font-bold">Checkout</h1>
@@ -31,9 +31,9 @@ export function CheckoutPage() {
           <CheckoutForm payable={cart.payable} />
         </div>
 
-        <div className="h-fit rounded-xl border border-gray-200 p-5">
+        <div className="h-fit rounded-xl border border-line p-5">
           <h2 className="mb-4 font-semibold">Order summary</h2>
-          <ul className="mb-4 space-y-1 text-sm text-gray-600">
+          <ul className="mb-4 space-y-1 text-sm text-muted">
             {cart.items.map((item) => (
               <li key={item.product.id} className="flex justify-between">
                 <span>

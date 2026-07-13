@@ -20,7 +20,7 @@ export function ProductDetailsPage() {
   if (isError || !product) {
     return (
       <div className="py-24 text-center">
-        <p className="text-gray-600">Product not found.</p>
+        <p className="text-muted">Product not found.</p>
         <Link to="/" className="text-sm underline">
           Back to shop
         </Link>
@@ -32,11 +32,11 @@ export function ProductDetailsPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <Link to="/" className="text-sm text-gray-500 hover:underline">
+      <Link to="/" className="text-sm text-muted hover:underline">
         ← Back to shop
       </Link>
       <div className="mt-4 grid gap-8 md:grid-cols-2">
-        <div className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-gray-100">
+        <div className="flex h-80 items-center justify-center overflow-hidden rounded-xl bg-surface-2">
           {image ? (
             <img
               src={image}
@@ -44,7 +44,7 @@ export function ProductDetailsPage() {
               className="h-full w-full object-cover"
             />
           ) : (
-            <span className="text-6xl text-gray-300">🛍️</span>
+            <span className="text-6xl text-muted/40">🛍️</span>
           )}
         </div>
 
@@ -54,8 +54,8 @@ export function ProductDetailsPage() {
             {product.category?.name && <Badge>{product.category.name}</Badge>}
           </div>
           <p className="text-2xl font-semibold">{formatMoney(product.price)}</p>
-          <p className="text-sm text-gray-600">{product.description}</p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted">{product.description}</p>
+          <p className="text-sm text-muted">
             {product.stock > 0
               ? `${product.stock} in stock`
               : 'Currently out of stock'}

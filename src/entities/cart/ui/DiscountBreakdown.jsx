@@ -8,7 +8,7 @@ export function DiscountBreakdown({ cart }) {
   return (
     <div className="space-y-2 text-sm">
       <div className="flex justify-between">
-        <span className="text-gray-600">Subtotal</span>
+        <span className="text-muted">Subtotal</span>
         <span className="font-medium">{formatMoney(cart.subtotal)}</span>
       </div>
 
@@ -27,13 +27,13 @@ export function DiscountBreakdown({ cart }) {
       )}
 
       {cart.appliedPercent > 0 && (
-        <div className="flex justify-between border-t border-gray-200 pt-2 text-green-700">
+        <div className="flex justify-between border-t border-line pt-2 text-green-700">
           <span>Total discount ({cart.appliedPercent}%)</span>
           <span>−{formatMoney(cart.discountAmount)}</span>
         </div>
       )}
 
-      <div className="flex justify-between border-t border-gray-200 pt-2 text-base font-semibold">
+      <div className="flex justify-between border-t border-line pt-2 text-base font-semibold">
         <span>Payable</span>
         <span>{formatMoney(cart.payable)}</span>
       </div>

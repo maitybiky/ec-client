@@ -14,8 +14,8 @@ function CartItemRow({ item }) {
   const { product, quantity } = item;
 
   return (
-    <div className="flex items-center gap-4 border-b border-gray-100 py-4">
-      <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg bg-gray-100">
+    <div className="flex items-center gap-4 border-b border-line py-4">
+      <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg bg-surface-2">
         {product.images?.[0]?.url ? (
           <img
             src={product.images[0].url}
@@ -23,13 +23,13 @@ function CartItemRow({ item }) {
             className="h-full w-full object-cover"
           />
         ) : (
-          <span className="text-2xl text-gray-300">🛍️</span>
+          <span className="text-2xl text-muted/40">🛍️</span>
         )}
       </div>
 
       <div className="flex-1">
         <p className="font-medium">{product.name}</p>
-        <p className="text-sm text-gray-500">{formatMoney(product.price)} each</p>
+        <p className="text-sm text-muted">{formatMoney(product.price)} each</p>
       </div>
 
       <div className="flex items-center gap-2">
@@ -89,7 +89,7 @@ export function CartPage() {
 
       {isEmpty ? (
         <div className="py-16 text-center">
-          <p className="mb-4 text-gray-600">Your cart is empty.</p>
+          <p className="mb-4 text-muted">Your cart is empty.</p>
           <Link to="/">
             <Button>Browse products</Button>
           </Link>
@@ -102,7 +102,7 @@ export function CartPage() {
             ))}
           </div>
 
-          <div className="h-fit rounded-xl border border-gray-200 p-5">
+          <div className="h-fit rounded-xl border border-line p-5">
             <h2 className="mb-4 font-semibold">Summary</h2>
             <DiscountBreakdown cart={cart} />
             <Link to="/checkout" className="mt-4 block">

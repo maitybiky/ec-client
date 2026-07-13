@@ -35,9 +35,9 @@ export function ProductManager() {
     <div className="space-y-4">
       <Button onClick={() => setEditing('new')}>+ New product</Button>
 
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-xl border border-line">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-left text-gray-600">
+          <thead className="bg-surface-2 text-left text-muted">
             <tr>
               <th className="p-3">Product</th>
               <th className="p-3">Category</th>
@@ -47,7 +47,7 @@ export function ProductManager() {
               <th className="p-3" />
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-line">
             {data?.products.map((p) => (
               <tr key={p._id}>
                 <td className="p-3 font-medium">{p.name}</td>
@@ -92,7 +92,7 @@ export function ProductManager() {
           >
             Previous
           </Button>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-muted">
             Page {page} of {data.pagination.totalPages}
           </span>
           <Button

@@ -37,7 +37,7 @@ export function CategoryManager() {
         <p className="text-sm text-red-600">{apiErrorMessage(create.error)}</p>
       )}
 
-      <div className="divide-y divide-gray-100 rounded-xl border border-gray-200">
+      <div className="divide-y divide-line rounded-xl border border-line">
         {categories?.map((cat) => (
           <div key={cat._id} className="flex items-center justify-between p-4">
             <div className="flex items-center gap-3">

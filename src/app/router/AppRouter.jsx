@@ -40,7 +40,7 @@ export function AppRouter() {
           <Route
             path="*"
             element={
-              <p className="py-24 text-center text-gray-500">Page not found.</p>
+              <p className="py-24 text-center text-muted">Page not found.</p>
             }
           />
         </Route>

@@ -18,8 +18,8 @@ function SavedAddressPicker({ addresses, selectedId, onSelect }) {
           key={a._id}
           className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 text-sm ${
             selectedId === a._id
-              ? 'border-gray-900 bg-gray-50'
-              : 'border-gray-200 hover:border-gray-400'
+              ? 'border-ink bg-surface-2'
+              : 'border-line hover:border-muted'
           }`}
         >
           <input
@@ -32,7 +32,7 @@ function SavedAddressPicker({ addresses, selectedId, onSelect }) {
           <span>
             <span className="font-medium">{a.fullName}</span> · {a.phone}
             <br />
-            <span className="text-gray-600">
+            <span className="text-muted">
               {a.line1}, {a.city}, {a.state} {a.postalCode}
             </span>
           </span>
@@ -117,12 +117,12 @@ export function CheckoutForm({ payable }) {
   return (
     <div className="space-y-4">
       {hasSaved && (
-        <div className="flex gap-1 rounded-lg bg-gray-100 p-1 text-sm">
+        <div className="flex gap-1 rounded-lg bg-surface-2 p-1 text-sm">
           <button
             type="button"
             onClick={() => setMode('existing')}
             className={`flex-1 rounded-md px-3 py-1.5 font-medium ${
-              activeMode === 'existing' ? 'bg-white shadow-sm' : 'text-gray-500'
+              activeMode === 'existing' ? 'bg-surface shadow-sm' : 'text-muted'
             }`}
           >
             Saved addresses
@@ -131,7 +131,7 @@ export function CheckoutForm({ payable }) {
             type="button"
             onClick={() => setMode('new')}
             className={`flex-1 rounded-md px-3 py-1.5 font-medium ${
-              activeMode === 'new' ? 'bg-white shadow-sm' : 'text-gray-500'
+              activeMode === 'new' ? 'bg-surface shadow-sm' : 'text-muted'
             }`}
           >
             New address
@@ -212,7 +212,7 @@ export function CheckoutForm({ payable }) {
         </form>
       )}
 
-      <p className="text-center text-xs text-gray-500">
+      <p className="text-center text-xs text-muted">
         Payment is simulated in this version — no real charge happens. Your
         address is saved for faster checkout next time.
       </p>

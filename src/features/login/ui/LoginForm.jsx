@@ -48,9 +48,9 @@ export function LoginForm() {
       <Button type="submit" className="w-full" disabled={login.isPending}>
         {login.isPending ? <Spinner className="h-4 w-4" /> : 'Log in'}
       </Button>
-      <p className="text-center text-sm text-gray-600">
+      <p className="text-center text-sm text-muted">
         No account?{' '}
-        <Link to="/register" className="font-medium text-gray-900 underline">
+        <Link to="/register" className="font-medium text-ink underline">
           Register
         </Link>
       </p>

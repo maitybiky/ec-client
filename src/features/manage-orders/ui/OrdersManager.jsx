@@ -43,9 +43,9 @@ export function OrdersManager() {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-gray-200">
+        <div className="overflow-x-auto rounded-xl border border-line">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 text-left text-gray-600">
+            <thead className="bg-surface-2 text-left text-muted">
               <tr>
                 <th className="p-3">Order</th>
                 <th className="p-3">Customer</th>
@@ -56,18 +56,18 @@ export function OrdersManager() {
                 <th className="p-3" />
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-line">
               {data?.orders.map((order) => (
                 <tr key={order._id}>
                   <td className="p-3">
                     <p className="font-medium">{order.orderNumber}</p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted">
                       {new Date(order.createdAt).toLocaleString()}
                     </p>
                   </td>
                   <td className="p-3">
                     <p>{order.user?.name}</p>
-                    <p className="text-xs text-gray-500">{order.user?.email}</p>
+                    <p className="text-xs text-muted">{order.user?.email}</p>
                   </td>
                   <td className="p-3 text-xs">
                     {order.items.map((i) => `${i.name} ×${i.quantity}`).join(', ')}
@@ -115,7 +115,7 @@ export function OrdersManager() {
               ))}
               {data?.orders.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-gray-500">
+                  <td colSpan={7} className="p-8 text-center text-muted">
                     No orders found.
                   </td>
                 </tr>
@@ -134,7 +134,7 @@ export function OrdersManager() {
           >
             Previous
           </Button>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-muted">
             Page {page} of {data.pagination.totalPages}
           </span>
           <Button

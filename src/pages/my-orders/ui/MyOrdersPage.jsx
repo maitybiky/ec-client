@@ -21,18 +21,18 @@ export function MyOrdersPage() {
       <h1 className="mb-6 text-2xl font-bold">My orders</h1>
 
       {orders.length === 0 ? (
-        <p className="py-16 text-center text-gray-500">No orders yet.</p>
+        <p className="py-16 text-center text-muted">No orders yet.</p>
       ) : (
-        <div className="divide-y divide-gray-100 rounded-xl border border-gray-200">
+        <div className="divide-y divide-line rounded-xl border border-line">
           {orders.map((order) => (
             <Link
               key={order._id}
               to={`/orders/${order._id}`}
-              className="flex items-center justify-between gap-4 p-4 hover:bg-gray-50"
+              className="flex items-center justify-between gap-4 p-4 hover:bg-surface-2"
             >
               <div>
                 <p className="font-medium">{order.orderNumber}</p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-muted">
                   {new Date(order.createdAt).toLocaleString()} ·{' '}
                   {order.items.length} item(s)
                 </p>

@@ -52,9 +52,9 @@ export function RegisterForm() {
       <Button type="submit" className="w-full" disabled={registerUser.isPending}>
         {registerUser.isPending ? <Spinner className="h-4 w-4" /> : 'Create account'}
       </Button>
-      <p className="text-center text-sm text-gray-600">
+      <p className="text-center text-sm text-muted">
         Already have an account?{' '}
-        <Link to="/login" className="font-medium text-gray-900 underline">
+        <Link to="/login" className="font-medium text-ink underline">
           Log in
         </Link>
       </p>

@@ -108,7 +108,7 @@ export function ProductForm({ product, onDone }) {
 
       {isEdit && product.images?.length > 0 && (
         <div>
-          <span className="mb-1 block text-sm font-medium text-gray-700">
+          <span className="mb-1 block text-sm font-medium text-ink">
             Current images
           </span>
           <div className="flex flex-wrap gap-2">
@@ -117,7 +117,7 @@ export function ProductForm({ product, onDone }) {
                 key={img.key}
                 src={img.url}
                 alt=""
-                className="h-20 w-20 rounded-lg border border-gray-200 object-cover"
+                className="h-20 w-20 rounded-lg border border-line object-cover"
               />
             ))}
           </div>
@@ -125,7 +125,7 @@ export function ProductForm({ product, onDone }) {
       )}
 
       <label className="block">
-        <span className="mb-1 block text-sm font-medium text-gray-700">
+        <span className="mb-1 block text-sm font-medium text-ink">
           {isEdit ? 'Add images' : 'Images'}
         </span>
         <input
@@ -133,7 +133,7 @@ export function ProductForm({ product, onDone }) {
           accept="image/jpeg,image/png,image/webp,image/gif"
           multiple
           onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
-          className="block w-full text-sm text-gray-600 file:mr-3 file:rounded-lg file:border-0 file:bg-gray-900 file:px-3 file:py-2 file:text-sm file:text-white"
+          className="block w-full text-sm text-muted file:mr-3 file:rounded-lg file:border-0 file:bg-ink file:px-3 file:py-2 file:text-sm file:text-surface"
         />
       </label>
 
@@ -144,13 +144,13 @@ export function ProductForm({ product, onDone }) {
               <img
                 src={p.url}
                 alt={p.name}
-                className="h-20 w-20 rounded-lg border border-gray-200 object-cover"
+                className="h-20 w-20 rounded-lg border border-line object-cover"
               />
               <button
                 type="button"
                 aria-label={`Remove ${p.name}`}
                 onClick={() => removeNewFile(i)}
-                className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-xs text-white"
+                className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-ink text-xs text-white"
               >
                 ×
               </button>
