@@ -16,7 +16,7 @@ export function MainLayout() {
             </span>
             ecom.
           </p>
-          <p>Dynamic discounts · Bigger carts, bigger savings</p>
+          <p>  Bigger carts, bigger savings</p>
           <p>© {new Date().getFullYear()} ecom store</p>
         </div>
       </footer>

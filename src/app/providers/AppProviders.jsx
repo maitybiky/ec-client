@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { restoreSession } from '@/shared/api';
+import { restoreSession, setSessionListener } from '@/shared/api';
 import { useUserStore } from '@/entities/user';
 import { Spinner } from '@/shared/ui';
 
@@ -23,6 +23,9 @@ function SessionGate({ children }) {
   useEffect(() => {
     if (started) return;
     setStarted(true);
+    // Keep the store in sync with silent refreshes; a null user means the
+    // refresh token died mid-session, which logs the UI out via route guards.
+    setSessionListener((user) => setUser(user));
     restoreSession().then((session) => {
       if (session?.user) setUser(session.user);
       setReady();

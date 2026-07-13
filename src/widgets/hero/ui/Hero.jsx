@@ -8,7 +8,7 @@ function PromoCard({ card, tall = false }) {
   return (
     <Link
       to="/shop"
-      className={`card group relative block overflow-hidden shadow-soft transition-shadow hover:shadow-lift ${
+      className={`card group relative block h-full overflow-hidden shadow-soft transition-shadow hover:shadow-lift ${
         tall ? 'row-span-2' : ''
       }`}
     >
@@ -97,8 +97,8 @@ export function Hero() {
           )}
         </div>
 
-        {/* Side bento column */}
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-1 lg:grid-rows-[auto_1fr]">
+        {/* Side bento column — categories row + two promo cards filling equal halves */}
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-1 lg:grid-rows-[auto_minmax(11rem,1fr)_minmax(11rem,1fr)]">
           {/* Categories chips card */}
           <div className="card col-span-2 p-5 shadow-soft lg:col-span-1">
             <p className="mb-3 text-sm font-semibold">Shop by category</p>
@@ -115,11 +115,11 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="min-h-44">
-            <PromoCard card={hp.cards?.[0]} tall={false} />
+          <div className="min-h-44 lg:min-h-0">
+            <PromoCard card={hp.cards?.[0]} />
           </div>
-          <div className="min-h-44">
-            <PromoCard card={hp.cards?.[1]} tall={false} />
+          <div className="min-h-44 lg:min-h-0">
+            <PromoCard card={hp.cards?.[1]} />
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@ export function Hero() {
 
         <div className="card flex items-center justify-between p-5 shadow-soft">
           <div>
-            <p className="font-semibold">Dynamic discounts</p>
+            <p className="font-semibold">limited discounts</p>
             <p className="text-sm text-muted">
               Bigger carts unlock bigger savings — up to the configured cap.
             </p>

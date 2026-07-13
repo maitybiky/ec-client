@@ -8,7 +8,7 @@ export function RegisterPage() {
           Create account
         </h1>
         <p className="mb-6 text-center text-sm text-muted">
-          Join and start saving with dynamic discounts
+          Join and start saving with limited discounts
         </p>
         <RegisterForm />
       </div>

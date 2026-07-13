@@ -103,7 +103,8 @@ export function HomepageEditor() {
         <p className="text-sm text-red-500">{apiErrorMessage(update.error)}</p>
       )}
 
-      <div className="flex items-center gap-3">
+      {/* Sticky so "Save" stays reachable from any scroll position */}
+      <div className="sticky bottom-0 z-10 -mx-2 flex items-center gap-3 border-t border-line bg-surface/90 px-2 py-3 backdrop-blur">
         <Button variant="accent" onClick={save} disabled={update.isPending}>
           {update.isPending ? <Spinner className="h-4 w-4" /> : 'Save homepage'}
         </Button>
